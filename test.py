@@ -10,4 +10,7 @@ class TestBeforeMuseum(unittest.TestCase):
         self.assertEquals([0, 1], main.index_of_pupils_in_group(['A', 'B'], 'ABA'))
 
     def test_read_group_from_input_file(self):
-        self.assertEquals('JAJ', main.test_read_group_from_input_file('input.txt'))
+        self.assertEquals('JAJ', main.read_group_from_input_file('input.txt'))
+
+    def test_read_all_pupils_from_input_file(self):
+        self.assertEquals('AJJBAJAJ', main.read_all_pupils_from_input_file('input.txt'))
