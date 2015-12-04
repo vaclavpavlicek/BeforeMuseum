@@ -3,6 +3,7 @@ import main
 
 
 class TestBeforeMuseum(unittest.TestCase):
+
     def test_index_of_pupils_in_group(self):
         self.assertEquals([1, 2], main.index_of_pupils_in_group(['A', 'B'], 'ABA'))
 
@@ -14,3 +15,6 @@ class TestBeforeMuseum(unittest.TestCase):
 
     def test_find_group_of_pupils(self):
         self.assertEquals([2, 5, 6], main.find_group_of_pupils('input.txt'))
+
+    def test_generate_output_file(self):
+        self.assertEquals('2 5 6', main.generate_output_file(main.find_group_of_pupils('input.txt')))
