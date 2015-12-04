@@ -3,7 +3,7 @@ def index_of_pupils_in_group(group, all_pupils):
     size_of_all_pupils = len(all_pupils)
     for pupil in group:
         result.append(all_pupils.find(pupil) + size_of_all_pupils - len(all_pupils) + 1)
-        all_pupils = all_pupils[all_pupils.find(pupil):]
+        all_pupils = all_pupils[all_pupils.find(pupil) + 1:]
     return result
 
 
@@ -41,5 +41,4 @@ def generate_output_file(indexes_of_pupils_in_group):
     output_file.write(result)
     return result
 
-if __name__ == '__main__':
-    generate_output_file('in')
+generate_output_file(find_group_of_pupils('input.txt'))
