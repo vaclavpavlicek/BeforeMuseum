@@ -1,12 +1,9 @@
-def index_of_pupil(pupil, pupils):
-    return pupils.find(pupil)
-
-
-def index_of_pupils_in_group(group, pupils):
+def index_of_pupils_in_group(group, all_pupils):
     result = []
+    size_of_all_pupils = len(all_pupils)
     for pupil in group:
-        result.append(pupils.find(pupil))
-        pupils = pupils[pupils.find(pupil):]
+        result.append(all_pupils.find(pupil) + size_of_all_pupils - len(all_pupils) + 1)
+        all_pupils = all_pupils[all_pupils.find(pupil):]
     return result
 
 
@@ -28,3 +25,10 @@ def read_line_from_input_file(input_file, line_number):
     for x in range(0, line_number):
         line = input_file.readline()
     return line
+
+
+def find_group_of_pupils(input_file):
+    group = read_group_from_input_file(input_file)
+    all_pupils = read_all_pupils_from_input_file(input_file)
+    indexes_of_pupils_in_group = index_of_pupils_in_group(group, all_pupils)
+    return indexes_of_pupils_in_group
