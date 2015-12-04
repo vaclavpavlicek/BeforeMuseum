@@ -40,3 +40,6 @@ def generate_output_file(indexes_of_pupils_in_group):
     output_file = open('output.txt', 'w')
     output_file.write(result)
     return result
+
+if __name__ == '__main__':
+    generate_output_file('in')
